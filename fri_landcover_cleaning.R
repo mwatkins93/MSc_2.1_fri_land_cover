@@ -82,6 +82,12 @@ fri_per_join  <- cbind(fri_percents, site)
 fri_arranged <- fri_per_join %>% 
   select("site", everything())
 
+### 3.05 - Start with something easy, total wetland coverage (compare with watershed_table_v1 values)
+
+fri_wetlands <- fri_arranged %>% 
+  select(site, open.wetland, treed.wetland) %>% 
+  mutate(total.wetland = open.wetland + treed.wetland)
+
 ## 4. PLOTTING ----
 
 ## 5. SAVING // EXPORTING ----
